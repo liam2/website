@@ -1,3 +1,3 @@
 ﻿.. _credits:
 
-.. include:: ../../../CREDITS.rst
+.. include:: ../../build/CREDITS.rst

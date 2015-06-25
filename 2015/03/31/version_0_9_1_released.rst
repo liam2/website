@@ -10,7 +10,7 @@ Download it from the :ref:`download section <download>`.
     for more details or the complete list of changes. Download this release
     from the :ref:`download section <download>`.
 
-.. include:: ../../../../usersguide/source/changes/version_0_9_1.rst.inc
+.. include:: ../../../../build/doc/usersguide/source/changes/version_0_9_1.rst.inc
 
 .. author:: default
 .. tags:: release

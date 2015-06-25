@@ -3,4 +3,4 @@
 Microsimulation
 ===============
 
-.. include:: ../../../MICROSIMULATION.rst
+.. include:: ../../build/MICROSIMULATION.rst

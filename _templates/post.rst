@@ -12,7 +12,7 @@ Download this release from the :ref:`download section <download>`.
     for more details or the complete list of changes. Download this release
     from the :ref:`download section <download>`.
 
-.. include:: ../../../../usersguide/source/changes/{{ title|lower()|replace(' released', '')|replace('.', '_')|replace(' ', '_')}}.rst.inc
+.. include:: ../../../../build/doc/usersguide/source/changes/{{ title|lower()|replace(' released', '')|replace('.', '_')|replace(' ', '_')}}.rst.inc
 
 .. author:: {{ author }}
 .. tags:: release

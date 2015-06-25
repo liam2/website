@@ -1,4 +1,4 @@
 About
 =====
 
-.. include:: ../../../README.rst
+.. include:: ../../build/README.rst

@@ -1,4 +1,4 @@
 Contact
 =======
 
-.. include:: ../../../CONTACT.rst
+.. include:: ../../build/CONTACT.rst
