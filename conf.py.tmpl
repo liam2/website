@@ -85,8 +85,10 @@ extensions = ['tinkerer.ext.blog', 'tinkerer.ext.disqus',
               'sphinx.ext.intersphinx', 'sphinx.ext.extlinks']
 
 # WARNING: braces need to be escaped (doubled) in the template!
+# (None, 'objects.inv') means trying first to get objects.inv from the
+# web then locally (requires Sphinx 1.3)
 intersphinx_mapping = {{'doc': ('http://liam2.plan.be/documentation/{version}',
-                               'objects.inv')}}
+                               (None, 'objects.inv'))}}
 extlinks = {{
     'issue': ('https://github.com/liam2/liam2/issues/%s', 'issue '),
     'pr': ('https://github.com/liam2/liam2/pull/%s', 'pull request '),
