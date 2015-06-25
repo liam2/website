@@ -1,0 +1,8 @@
+.idea
+*.pyc
+*.pyd
+blog
+objects.inv
+pages/download.rst
+pages/documentation.rst
+conf.py
