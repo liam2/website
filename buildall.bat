@@ -1,3 +1,3 @@
 @echo off
-copy ..\usersguide\build\html\objects.inv .
+copy ..\liam2\doc\usersguide\build\html\objects.inv .
 tinker --build
