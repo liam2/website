@@ -403,11 +403,19 @@ def build_website(context):
 
 
 def final_confirmation(context):
-    msg = """Is the release looking good? If so the website will be uploaded
-to the production server and the release will be announced.
+    msg = """Is the release looking good? If so, the tag will be created and
+pushed, the website will be uploaded to the production server and the release
+will be announced.
 """
     if no(msg):
         exit(1)
+
+
+def tag_release(context):
+    chdir(context['webbuild_dir'])
+
+    release_name = context['release_name']
+    call('git tag -a {name} -m "tag release {name}"'.format(name=release_name))
 
 
 def upload(context):
@@ -474,6 +482,7 @@ steps_funcs = [
     (check_clones, ''),
     (build_website, 'Building website'),
     (final_confirmation, ''),
+    (tag_release, 'Tagging release'),
     # We used to push from /tmp to the local repository but you cannot push
     # to the currently checked out branch of a repository, so we need to
     # pull changes instead. However pull (or merge) add changes to the
