@@ -348,10 +348,14 @@ def clone_repository(context):
        call, 'git clone -b {branch} {repository} webbuild'.format(**context))
 
 
-def check_clone(context):
+def check_clones(context):
     # check release highlights
     print(release_highlights(context))
     if no('Does the release highlights look right?'):
+        exit(1)
+    # check release changes
+    print(release_changes(context))
+    if no('Does the release changes look right?'):
         exit(1)
 
 
@@ -467,7 +471,7 @@ able to post).
 steps_funcs = [
     (check_local_repo, ''),
     (clone_repository, ''),
-    (check_clone, ''),
+    (check_clones, ''),
     (build_website, 'Building website'),
     (final_confirmation, ''),
     # We used to push from /tmp to the local repository but you cannot push
