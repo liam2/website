@@ -344,7 +344,7 @@ def clone_repository(context):
     # "working copy clone" (eg ~/devel/liam2) then to GitHub from there. The
     # alternative to modify the "working copy clone" directly is worse because
     # it needs more complicated path handling that the 2 push approach.
-    do('Cloning repository',
+    do('Cloning website repository',
        call, 'git clone -b {branch} {repository} webbuild'.format(**context))
 
 
@@ -380,11 +380,11 @@ def build_website(context):
 
     title = 'Version %s released' % short(release_name)
     # strip is important otherwise fname contains a \n and git chokes on it
-    fname = call('tinker --filename --post "%s"' % title).strip()
+    fname = call('tinker --filename --post "%s"' % title, shell=True).strip()
 
     # for (intersphinx) links to documentation in release notes
     copy2('{tmp_dir}\htmldoc\objects.inv'.format(**context), '.')
-    call('tinker --build')
+    call('tinker --build', shell=True)
 
     call('start ' + abspath(r'blog\html\index.html'), shell=True)
     call('start ' + abspath(r'blog\html\pages\download.html'), shell=True)
@@ -511,12 +511,18 @@ def make_release(release_name='dev', steps=':'):
 
     release_name = long_release_name(release_name)
 
+    webrepository = abspath(dirname(__file__))
     build_dir = os.path.join(TMP_PATH, 'build')
     if not exists(build_dir):
-        exit(1)
+        # print(build_dir, "does not exist !")
+        # exit(1)
+        chdir(TMP_PATH)
+        main_repo = os.path.join(webrepository, '../liam2-website')
+        do('Cloning main repository',
+           call, 'git clone -b master {} build'.format(main_repo))
 
     context = {'branch': 'master', 'release_name': release_name,
-               'repository': (abspath(dirname(__file__))),
+               'repository': webrepository,
                'tmp_dir': TMP_PATH,
                'build_dir': build_dir,
                'webbuild_dir': os.path.join(TMP_PATH, 'webbuild')}
