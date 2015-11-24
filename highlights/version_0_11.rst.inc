@@ -1,5 +1,3 @@
-Highlights of this release are ... and other smaller fixes and improvements.
-
-OR
-
-This is a bug fix only release.
+Highlights of this release are support for the "sidewalk" alignment method,
+support for default values for fields and some basic help in the interactive
+console.
