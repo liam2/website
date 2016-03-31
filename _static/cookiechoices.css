@@ -1,0 +1,17 @@
+#cookieChoiceInfo {
+    background-color: rgba(160, 72, 72, 0.9);
+    border-top: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+#cookieChoiceInfo a {
+    background-color: #585f69;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    line-height: 19px;
+    padding: 4px 8px;
+    text-decoration: none;
+    white-space: nowrap;
+}

@@ -1,7 +1,10 @@
 {% extends "!page.html" %}
 
+{% set css_files = css_files + ["_static/cookiechoices.css"] %}
+
 {% block footer %}
 {{ super() }}
 {% include "github-banner.html" %}
 {% include "piwik.html" %}
+{% include "cookiechoices.html" %}
 {% endblock %}
