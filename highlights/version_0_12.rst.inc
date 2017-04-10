@@ -1,0 +1,1 @@
+Highlights of this release are choice() with probabilities which can be different per individual (e.g. depending on gender), the ability to load globals mid-simulation and the possibility to do simulations without any .h5 output file.
