@@ -5,3 +5,5 @@ blog
 objects.inv
 pages/download.rst
 pages/documentation.rst
+# modify conf.py.tmpl instead !
+conf.py
